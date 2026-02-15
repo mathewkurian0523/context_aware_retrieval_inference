@@ -3,7 +3,10 @@ from pypdf import PdfReader
 
 
 def extract_text_from_pdf(pdf_path):
-   
+    """
+    Extracts raw text from a single PDF file.
+    Returns full text and number of pages.
+    """
     reader = PdfReader(pdf_path)
     text = ""
     
