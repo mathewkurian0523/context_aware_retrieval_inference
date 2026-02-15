@@ -1,0 +1,45 @@
+
+retrieval:
+  # Number of chunks retrieved per query
+  top_k_chunks: 6
+
+  # Minimum similarity score required to include a chunk
+  # Set to null to disable thresholding
+  similarity_threshold: null
+
+  # Retrieval strategy
+  strategy: dense
+
+
+context:
+  # Maximum number of tokens allowed in the model context
+  max_context_tokens: 4096
+
+  # Maximum tokens allowed per chunk
+  chunk_token_limit: 400
+
+  # How retrieved chunks are ordered before context assembly
+  # Options: relevance | paper_diversity
+  sorting: relevance
+
+  # Allow partial context if token limit is reached
+  allow_partial: true
+
+
+generation:
+  # Controls randomness in generation
+  temperature: 0.2
+
+  # Maximum tokens generated in the answer
+  max_output_tokens: 512
+
+  # Require citations in the final answer
+  citation_required: true
+
+
+metrics:
+  # Enable inference-time metrics logging
+  enabled: true
+
+  # Log which chunks were retrieved for each query
+  log_retrieved_chunks: true
